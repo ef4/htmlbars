@@ -175,7 +175,7 @@ export var AlwaysDirtyVisitor = merge(createObject(base), {
     var paramsAndHash = this.acceptParamsAndHash(env, scope, morph, path, null, attrs);
 
     morph.isDirty = morph.isSubtreeDirty = false;
-    env.hooks.component(morph, env, scope, path, paramsAndHash[1],
+    env.hooks.component(morph, env, scope, path, paramsAndHash[0], paramsAndHash[1],
                         template.templates[templateId], visitor);
   }
 });

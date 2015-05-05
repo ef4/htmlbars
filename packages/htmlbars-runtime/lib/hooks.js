@@ -505,7 +505,7 @@ export function handleRedirect(morph, env, scope, path, params, hash, template, 
   var redirect = env.hooks.classify(env, scope, path);
   if (redirect) {
     switch(redirect) {
-      case 'component': env.hooks.component(morph, env, scope, path, hash, template, visitor); break;
+      case 'component': env.hooks.component(morph, env, scope, path, params, hash, template, visitor); break;
       case 'inline': env.hooks.inline(morph, env, scope, path, params, hash, visitor); break;
       case 'block': env.hooks.block(morph, env, scope, path, params, hash, template, inverse, visitor); break;
       default: throw new Error("Internal HTMLBars redirection to " + redirect + " not supported");
