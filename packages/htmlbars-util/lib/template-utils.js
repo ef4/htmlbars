@@ -21,6 +21,9 @@ export function blockFor(render, template, blockOptions) {
       if (blockOptions.yieldTo !== undefined) {
         env.hooks.bindBlock(env, shadowScope, blockOptions.yieldTo);
       }
+      if (blockOptions.inverseTo !== undefined) {
+        env.hooks.bindBlock(env, shadowScope, blockOptions.inverseTo, 'inverse');
+      }
 
       renderAndCleanup(renderNode, env, options, null, function() {
         options.renderState.clearMorph = null;
